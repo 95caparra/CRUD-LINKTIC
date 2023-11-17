@@ -1,0 +1,4 @@
+// WARNING: Do not add anything here
+dependencies {
+    implementation 'org.springframework.boot:spring-boot-starter-cache'
+}

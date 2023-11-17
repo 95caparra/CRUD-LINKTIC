@@ -1,0 +1,84 @@
+component:
+  company: linktic
+  name: CRUD
+  version: 1.0.0
+
+server:
+  port: 8080
+  compression:
+    enabled: true
+  error:
+    include-stacktrace: never
+    whitelabel:
+      enabled: true
+  servlet:
+    context-path: /${component.company}-api/${component.name}
+
+
+logging:
+  level:
+    root: info
+    org.springframework: info
+    co.com.movii: info
+
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/crud?allowPublicKeyRetrieval=true&autoReconnect=true&useSSL=true&serverTimezone=GMT-5
+    username: root
+    password:
+    hikari:
+      poolName: mysql-crud-pool
+      autoCommit: true
+      acquisition-timeout: 30000
+      detect-statement-leaks: false
+      pooling-enabled: false
+      allowPoolSuspension: false
+      connectionTimeout: 60000
+      idleTimeout: 120000
+      maximumPoolSize: 60
+      minimumIdle: 20
+      maxLifetime: 600000
+      catalog: crud
+  jpa:
+    database: mysql
+    database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
+    open-in-view: false
+    show-sql: false
+    hibernate:
+      ddl-auto: validate
+
+application:
+  messages:
+    encoding: UTF-8
+  output:
+    ansi:
+      enabled: always
+  main:
+    banner-mode: log
+
+
+services:
+  rest:
+    transactions:
+      path: /transactions
+
+
+status-codes:
+  success:
+    "200":
+      message: Transacción exitosa
+      codes:
+        - SUCCESS
+  fails:
+    "400":
+      message: Solicitud inválida
+      codes:
+        - BAD_REQUEST
+        - NAME_IS_REQUIRED, nombre is required
+        - DESCRIPTION_IS_REQUIRED, descripcion is required
+        - PRICE_IS_REQUIRED, precio is required
+    "500":
+      message: No pudimos conectarnos con el servidor. Por favor vuelve a intentarlo.
+      codes:
+        - SERVER_ERROR

@@ -1,0 +1,38 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: __NameDeploy__
+  namespace: __Namespace__
+spec:
+  selector:
+    matchLabels:
+      app: __NameDeploy__
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        app: __NameDeploy__
+    spec:
+      imagePullSecrets:
+        - name: oci-registry-secret
+      containers:
+      - name: __NameDeploy__
+        image: iad.ocir.io/idxppotzmhlc/moviiredsas/__NameDeploy__:__Tag__
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 8080
+        volumeMounts:
+        - name: __NameDeploy__
+          mountPath: /app/config
+          readOnly: true
+        resources:
+          requests:
+            cpu: 60m
+            memory: 1500Mi
+          limits:
+            cpu: 250m
+            memory: 2000Mi
+      volumes:
+      - name: __NameDeploy__
+        configMap:
+          name: __NameDeploy__

@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: __NameDeploy__
+  namespace: __Namespace__
+spec:
+  selector:
+    app: __NameDeploy__
+  type: ClusterIP
+  ports:
+  - name: port1
+    port: 8080
+    protocol: TCP
+    targetPort: 8080

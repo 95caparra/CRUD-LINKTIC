@@ -1,0 +1,14 @@
+dependencies {
+    implementation project(':model')
+    implementation project(':use-case')
+    implementation project(':api-rest')
+    implementation project(':rest-web-repository')
+    implementation project(':mysql-db-repository')
+    implementation project(':query-ws-biller')
+
+    implementation 'commons-codec:commons-codec:1.15'
+    implementation 'org.springframework.boot:spring-boot-starter'
+    implementation 'org.springframework.boot:spring-boot-starter-cache'
+    implementation 'org.junit.jupiter:junit-jupiter:5.9.2'
+
+}
