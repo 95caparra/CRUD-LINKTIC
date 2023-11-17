@@ -21,3 +21,7 @@ If you want to learn more about creating good readme files then refer the follow
 
 # Swagger
 http://localhost:8080/linktic-api/CRUD/swagger-ui/index.html
+
+
+# Diagrama de clases
+https://app.diagrams.net/#G1y6U3Imnd97foA5swD2Zt5zr04LdcLf7P
