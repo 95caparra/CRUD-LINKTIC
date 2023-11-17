@@ -8,7 +8,7 @@ metadata:
     nginx.ingress.kubernetes.io/ssl-redirect: "false"
 spec:
   rules:
-  - host: __NameDeploy__.__Namespace__.okedev.moviired.co
+  - host: __NameDeploy__.__Namespace__.okedev.linktic.co
     http:
       paths:
       - pathType: Prefix

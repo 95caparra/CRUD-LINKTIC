@@ -19,7 +19,7 @@ logging:
   level:
     root: info
     org.springframework: info
-    co.com.movii: info
+    co.com.linktic: info
 
 spring:
   datasource:

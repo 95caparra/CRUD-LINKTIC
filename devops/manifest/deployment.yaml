@@ -17,7 +17,7 @@ spec:
         - name: oci-registry-secret
       containers:
       - name: __NameDeploy__
-        image: iad.ocir.io/idxppotzmhlc/moviiredsas/__NameDeploy__:__Tag__
+        image: iad.ocir.io/idxppotzmhlc/linkticsas/__NameDeploy__:__Tag__
         imagePullPolicy: Always
         ports:
         - containerPort: 8080
